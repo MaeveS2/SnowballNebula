@@ -44,4 +44,8 @@ for that package. The method takes the `Class<?>` which contains the methodas ar
 Auto-registering is enabled using `SnowballNebula#enableAutoRegistering`, with the package name as argument. This
 can be obtained using `<class name>.class.getPackageName()`.
 
+### Further documentation and bug reports
+For further documentation, please **read the docs** and take a look at the testing classes.
+Bugs can be reported on discord, my tag is `Maeve#6666`
+
 ![Snowball Nebula](https://cdn.discordapp.com/attachments/653632542100160547/920772806982131772/unknown.png)
