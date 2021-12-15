@@ -32,8 +32,9 @@ Example (from src/test):
  ```
 The `Option` annotation is used to add an option to the command.
 
-This code produces the following command: 
-![](https://cdn.discordapp.com/attachments/902497478270672916/920778608568598548/unknown.png)
+This code produces the following command:
+
+![Image](https://cdn.discordapp.com/attachments/902497478270672916/920778608568598548/unknown.png)
 
 Then, you have to register the command by using the `SnowballNebula#register` method or by enabling auto-register
 for that package. The method takes the `Class<?>` which contains the methodas argument. It can be obtained using
