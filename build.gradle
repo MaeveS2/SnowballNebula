@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+group 'io.github.maeves2'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+    maven {
+        name 'm2-dv8tion'
+        url 'https://m2.dv8tion.net/releases'
+    }
+    maven { url 'https://mvnrepository.com/artifact/org.slf4j/slf4j-jdk14' }
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'net.dv8tion:JDA:4.3.0_346'
+    implementation 'org.slf4j:slf4j-api:1.7.32'
+    implementation 'org.slf4j:slf4j-simple:1.7.32'
+}
