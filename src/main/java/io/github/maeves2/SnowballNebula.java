@@ -136,8 +136,6 @@ public class SnowballNebula extends ListenerAdapter {
      * @return {@link SnowballNebula} for chaining convenience
      */
     public SnowballNebula enableAutoRegistering(String targetPackage) {
-//        new Reflections(targetPackage).getTypesAnnotatedWith(AutoRegister.class)
-//                .forEach(e -> register(e));
         Utilities.getAllClassesFromPackage(targetPackage).stream()
                 .filter(e -> e.isAnnotationPresent(AutoRegister.class))
                 .collect(Collectors.toSet())
