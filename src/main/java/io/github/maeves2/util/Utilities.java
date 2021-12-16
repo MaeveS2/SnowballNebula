@@ -4,7 +4,6 @@ import io.github.maeves2.commands.SlashCommand;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
-import org.slf4j.LoggerFactory;
 
 import java.awt.*;
 import java.io.BufferedReader;
@@ -42,15 +41,7 @@ public class Utilities {
         return "[" + dtf.format(LocalDateTime.now()) + "] ";
     }
 
-    /**
-     * Logs something
-     * @param content The string to be logged
-     */
-    public static void log(String content) {
-        LoggerFactory.getLogger("SnowballNebula").info(now() + content);
-    }
-
-    /**
+     /**
      * Creates a list of {@link OptionData} from one or more
      * {@link io.github.maeves2.commands.SlashCommand.Option} annotations
      * @param options The options (varargs)
