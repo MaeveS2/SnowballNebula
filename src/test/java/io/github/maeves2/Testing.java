@@ -1,13 +1,10 @@
 package io.github.maeves2;
 
-import io.github.maeves2.commands.AutoRegister;
-import io.github.maeves2.util.Utilities;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
 
 import javax.security.auth.login.LoginException;
-import java.util.stream.Collectors;
 
 public class Testing {
     public static void main(String... args) throws LoginException, InterruptedException {
