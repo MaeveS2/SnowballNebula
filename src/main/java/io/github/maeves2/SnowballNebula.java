@@ -10,7 +10,6 @@ import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import org.jetbrains.annotations.NotNull;
-import org.reflections.Reflections;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.helpers.Util;
@@ -96,7 +95,7 @@ public class SnowballNebula extends ListenerAdapter {
     }
 
     /**
-     * Returns the specified JDA instance, destinated for internal use.
+     * Returns the specified JDA instance, destined for internal use.
      * @return {@link JDA}
      */
     public JDA getJda() {
@@ -153,7 +152,7 @@ public class SnowballNebula extends ListenerAdapter {
     public void onSlashCommand(@NotNull SlashCommandEvent event) {
         if (event.getUser().equals(jda.getSelfUser())) return;
         var command = getRegisteredCommand(event.getName());
-        if (command == null) return;
+        Objects.requireNonNull(command);
 
         var perm = command.getPerm();
         if (!event.getMember().hasPermission(perm)) {
@@ -173,7 +172,7 @@ public class SnowballNebula extends ListenerAdapter {
     }
 
     /**
-     * Returns a registered command, destinated for internal use.
+     * Returns a registered command, destined for internal use.
      * @param name Name of the command
      * @return {@link RegisteredCommand}
      */
