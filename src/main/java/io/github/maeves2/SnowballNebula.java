@@ -171,6 +171,19 @@ public class SnowballNebula extends ListenerAdapter {
         }
     }
 
+    public SnowballNebula addCommandsToGuilds() {
+        jda.getGuilds().forEach(e -> e.updateCommands().addCommands(this.getCommands()).queue());
+        var guildNames = jda.getGuilds().stream().parallel().map(e -> e.getName()).collect(Collectors.toSet());
+        if (log) logger.info("Registered commands in guilds: " + guildNames);
+        return this;
+    }
+
+    public SnowballNebula upsertCommands() {
+        this.getCommands().forEach(e -> jda.upsertCommand(e));
+        if (log) logger.info("Upserted all commands, this might take up to one hour...");
+        return this;
+    }
+
     /**
      * Returns a registered command, destined for internal use.
      * @param name Name of the command
