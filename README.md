@@ -11,10 +11,10 @@ Discord slash commands framework, works with JDA (https://github.com/DV8FromTheW
 * Add the JitPack repository to your `pom.xml`
 ```xml
 <repositories>
-    <repository>
-		      <id>jitpack.io</id>
-		      <url>https://jitpack.io</url>
-		  </repository>
+	<repository>
+		<id>jitpack.io</id>
+		 <url>https://jitpack.io</url>
+	</repository>
 </repositories>
 ```
 * Add the dependency
@@ -30,16 +30,16 @@ Discord slash commands framework, works with JDA (https://github.com/DV8FromTheW
 * Add the JitPack repository to your `build.gradle`
 ```groovy
 allprojects {
-    repositories {
-			    ...
-			    maven { url 'https://jitpack.io' }
-		  }
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
+	}
 }
 ```
 * Add the dependency
 ```groovy
 dependencies {
-	        implementation 'com.github.MaeveS2:SnowballNebula:Tag'
+	implementation 'com.github.MaeveS2:SnowballNebula:Tag'
 }
 ```
 
