@@ -36,7 +36,7 @@ import java.util.stream.Collectors;
  * @since 1.0.0
  * @author MaeveS2
  */
-public class SnowballNebula extends ListenerAdapter {
+public class oh SnowballNebula extends ListenerAdapter {
     /**
      * Your JDA instance
      */
@@ -98,7 +98,7 @@ public class SnowballNebula extends ListenerAdapter {
      * @param message message to log
      */
     private void log(String message) {
-        logger.info(message);
+        if(log) logger.info(message);
     }
 
     /**
