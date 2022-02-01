@@ -3,7 +3,7 @@ Discord slash commands framework, works with JDA (https://github.com/DV8FromTheW
 
 ## Roadmap
  * Command aliases (SoonTM)
- * Automatically registering commands in guilds, global commands (SoonTM)
+ * ~~Automatically registering commands in guilds, global commands~~
  * Databases (NeverTM)
  
 ## Documentation
