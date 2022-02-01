@@ -36,7 +36,7 @@ import java.util.stream.Collectors;
  * @since 1.0.0
  * @author MaeveS2
  */
-public class oh SnowballNebula extends ListenerAdapter {
+public class SnowballNebula extends ListenerAdapter {
     /**
      * Your JDA instance
      */
