@@ -6,6 +6,42 @@ Discord slash commands framework, works with JDA (https://github.com/DV8FromTheW
  * ~~Automatically registering commands in guilds, global commands~~
  * Databases (NeverTM)
  
+## Installation
+### Maven
+* Add the JitPack repository to your `pom.xml`
+```xml
+<repositories>
+    <repository>
+		      <id>jitpack.io</id>
+		      <url>https://jitpack.io</url>
+		  </repository>
+</repositories>
+```
+* Add the dependency
+```xml
+<dependency>
+    <groupId>com.github.MaeveS2</groupId>
+    <artifactId>SnowballNebula</artifactId>
+    <version>1.1.2</version>
+</dependency>
+
+### Gradle
+* Add the JitPack repository to your `build.gradle`
+```groovy
+allprojects {
+    repositories {
+			    ...
+			    maven { url 'https://jitpack.io' }
+		  }
+}
+```
+* Add the dependency
+```groovy
+dependencies {
+	        implementation 'com.github.MaeveS2:SnowballNebula:Tag'
+}
+```
+
 ## Documentation
 ### Example Usage
 ```java
