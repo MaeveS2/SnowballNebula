@@ -13,16 +13,16 @@ Discord slash commands framework, works with JDA (https://github.com/DV8FromTheW
 <repositories>
 	<repository>
 		<id>jitpack.io</id>
-		 <url>https://jitpack.io</url>
+		<url>https://jitpack.io</url>
 	</repository>
 </repositories>
 ```
-* Add the dependency
+* Add the dependency (replace `latest` with the latest version)
 ```xml
 <dependency>
     <groupId>com.github.MaeveS2</groupId>
     <artifactId>SnowballNebula</artifactId>
-    <version>1.1.2</version>
+    <version>latest</version>
 </dependency>
 ```
 
@@ -36,10 +36,10 @@ allprojects {
 	}
 }
 ```
-* Add the dependency
+* Add the dependency (replace `latest` with the latest version)
 ```groovy
 dependencies {
-	implementation 'com.github.MaeveS2:SnowballNebula:Tag'
+	implementation 'com.github.MaeveS2:SnowballNebula:latest'
 }
 ```
 
