@@ -1,0 +1,3 @@
+# configuration file for building releases with jitpack.io
+jdk:
+  - openjdk16
