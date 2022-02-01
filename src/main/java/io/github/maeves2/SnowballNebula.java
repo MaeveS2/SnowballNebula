@@ -126,7 +126,7 @@ public class SnowballNebula extends ListenerAdapter {
                     registry.putIfAbsent(command.name(), new RegisteredCommand(
                             clazz, command.name(), command.perm(), command.permissionMessage(),
                             method, data, options));
-                    log(("Registered new command (/" + command.name() + ") from " + clazz.getName()));
+                    log("Registered new command (/" + command.name() + ") from " + clazz.getName());
                 } else
                     continue;
             }
@@ -147,7 +147,7 @@ public class SnowballNebula extends ListenerAdapter {
                 .filter(e -> e.isAnnotationPresent(AutoRegister.class))
                 .collect(Collectors.toSet())
                 .forEach(e -> register(e));
-        log(("Enabled automatic registering"));
+        log("Enabled automatic registering");
         return this;
     }
 
@@ -171,8 +171,8 @@ public class SnowballNebula extends ListenerAdapter {
         }
         try {
             command.getMethod().invoke(command.getInstance(), event);
-            log((event.getUser().getAsTag() + " executed command /" +
-                    event.getName() + " in " + event.getGuild()));
+            log(event.getUser().getAsTag() + " executed command /" +
+                    event.getName() + " in " + event.getGuild());
         } catch (Exception e) {
             event.replyEmbeds(Utilities.failEmbed("Sorry, something went wrong..."));
             e.printStackTrace();
@@ -182,13 +182,13 @@ public class SnowballNebula extends ListenerAdapter {
     public SnowballNebula addCommandsToGuilds() {
         jda.getGuilds().forEach(e -> e.updateCommands().addCommands(this.getCommands()).queue());
         var guildNames = jda.getGuilds().stream().parallel().map(e -> e.getName()).collect(Collectors.toSet());
-        log(("Registered commands in guilds: " + guildNames));
+        log("Registered commands in guilds: " + guildNames);
         return this;
     }
 
     public SnowballNebula upsertCommands() {
         this.getCommands().forEach(e -> jda.upsertCommand(e));
-        log(("Upserted all commands, this might take up to one hour..."));
+        log("Upserted all commands, this might take up to one hour...");
         return this;
     }
 
