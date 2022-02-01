@@ -24,6 +24,7 @@ Discord slash commands framework, works with JDA (https://github.com/DV8FromTheW
     <artifactId>SnowballNebula</artifactId>
     <version>1.1.2</version>
 </dependency>
+```
 
 ### Gradle
 * Add the JitPack repository to your `build.gradle`
