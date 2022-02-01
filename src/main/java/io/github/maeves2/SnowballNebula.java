@@ -95,7 +95,7 @@ public class SnowballNebula extends ListenerAdapter {
     /**
      * Log a message at the INFO level using slf4j
      *
-     * @param message
+     * @param message message to log
      */
     private void log(String message) {
         logger.info(message);
