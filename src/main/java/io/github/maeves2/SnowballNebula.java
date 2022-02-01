@@ -12,10 +12,7 @@ import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.slf4j.helpers.Util;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -87,6 +84,7 @@ public class SnowballNebula extends ListenerAdapter {
      * <li>Registering of commands</li>
      * <li>Execution of commands</li>
      * <li>Enabling of auto-registering</li>
+     *
      * @return {@link SnowballNebula} for chaining convenience
      */
     public SnowballNebula enableLogging() {
@@ -95,7 +93,17 @@ public class SnowballNebula extends ListenerAdapter {
     }
 
     /**
+     * Log a message at the INFO level using slf4j
+     *
+     * @param message
+     */
+    private void log(String message) {
+        logger.info(message);
+    }
+
+    /**
      * Returns the specified JDA instance, destined for internal use.
+     *
      * @return {@link JDA}
      */
     public JDA getJda() {
@@ -118,7 +126,7 @@ public class SnowballNebula extends ListenerAdapter {
                     registry.putIfAbsent(command.name(), new RegisteredCommand(
                             clazz, command.name(), command.perm(), command.permissionMessage(),
                             method, data, options));
-                    if (log) logger.info("Registered new command (/" + command.name() + ") from " + clazz.getName());
+                    log(("Registered new command (/" + command.name() + ") from " + clazz.getName()));
                 } else
                     continue;
             }
@@ -139,7 +147,7 @@ public class SnowballNebula extends ListenerAdapter {
                 .filter(e -> e.isAnnotationPresent(AutoRegister.class))
                 .collect(Collectors.toSet())
                 .forEach(e -> register(e));
-        if (log) logger.info("Enabled automatic registring");
+        log(("Enabled automatic registering"));
         return this;
     }
 
@@ -163,8 +171,8 @@ public class SnowballNebula extends ListenerAdapter {
         }
         try {
             command.getMethod().invoke(command.getInstance(), event);
-            if (log) logger.info(event.getUser().getAsTag() + " executed command /" +
-                    event.getName() + " in " + event.getGuild());
+            log((event.getUser().getAsTag() + " executed command /" +
+                    event.getName() + " in " + event.getGuild()));
         } catch (Exception e) {
             event.replyEmbeds(Utilities.failEmbed("Sorry, something went wrong..."));
             e.printStackTrace();
@@ -174,13 +182,13 @@ public class SnowballNebula extends ListenerAdapter {
     public SnowballNebula addCommandsToGuilds() {
         jda.getGuilds().forEach(e -> e.updateCommands().addCommands(this.getCommands()).queue());
         var guildNames = jda.getGuilds().stream().parallel().map(e -> e.getName()).collect(Collectors.toSet());
-        if (log) logger.info("Registered commands in guilds: " + guildNames);
+        log(("Registered commands in guilds: " + guildNames));
         return this;
     }
 
     public SnowballNebula upsertCommands() {
         this.getCommands().forEach(e -> jda.upsertCommand(e));
-        if (log) logger.info("Upserted all commands, this might take up to one hour...");
+        log(("Upserted all commands, this might take up to one hour..."));
         return this;
     }
 
