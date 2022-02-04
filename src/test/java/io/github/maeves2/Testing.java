@@ -1,5 +1,6 @@
 package io.github.maeves2;
 
+import io.github.maeves2.snowballnebula.SnowballNebula;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
@@ -18,8 +19,5 @@ public class Testing {
         var snowball = new SnowballNebula(jda)
                 .enableLogging()
                 .enableAutoRegistering(Testing.class.getPackageName());
-
-        var commands = snowball.getCommands();
-        jda.getGuilds().forEach(e -> e.updateCommands().addCommands(commands).queue());
     }
 }
