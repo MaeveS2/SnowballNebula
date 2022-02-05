@@ -192,10 +192,6 @@ public class SnowballNebula extends ListenerAdapter {
                         isAssignableFrom(e.getCause().getClass())) {
                     try {
                         handler.getMethod().invoke(handler.getInstance(), e.getCause(), event);
-                        System.out.println(handler.getCommands());
-                        System.out.println(handler.getHandledException());
-                        System.out.println(handler.getHandledException().
-                                isAssignableFrom(e.getCause().getClass()));
                     } catch (IllegalAccessException | InvocationTargetException ex) {
                         ex.printStackTrace();
                     }
