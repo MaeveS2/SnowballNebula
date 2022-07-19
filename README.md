@@ -50,7 +50,7 @@ var snowball = new SnowballNebula(jda)
                    .enableLogging()
                    .enableAutoRegistering(Testing.class.getPackageName());
 var commands = snowball.getCommands();
-jda.getGuilds().forEach(e -> e.updateCommands().addCommands(commands).queue());$
+jda.getGuilds().forEach(e -> e.updateCommands().addCommands(commands).queue());
  ```
 (`jda` being an instance of JDA)
  
